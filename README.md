@@ -10,3 +10,7 @@ Will be using this one: https://github.com/adafruit/Adafruit_Python_MPR121
 # Operating System
 
 Get newest Raspian, probably Jessie: https://www.raspberrypi.org/downloads/raspbian/
+
+# Hardware
+
+Capacitive touch hardware: https://learn.adafruit.com/adafruit-mpr121-12-key-capacitive-touch-sensor-breakout-tutorial/downloads?view=all
