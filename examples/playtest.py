@@ -20,27 +20,14 @@
 # THE SOFTWARE.
 import sys
 import time
-import RPi.GPIO as GPIO
+import pygame
 
 import Adafruit_MPR121.MPR121 as MPR121
 
+# Thanks to Scott Garner & BeetBox!
+# https://github.com/scottgarner/BeetBox/
 
-GPIO.setmode(GPIO.BCM)
-#set up GPIO pins as outputs
-GPIO.setup(16,GPIO.OUT)
-GPIO.setup(26,GPIO.OUT)
-
-print('Adafruit MPR121 Capacitive Touch Sensor Test')
-
-#test
-GPIO.output(16, GPIO.HIGH)
-time.sleep(1)
-GPIO.output(16, GPIO.LOW)
-time.sleep(1)
-GPIO.output(26, GPIO.HIGH)
-time.sleep(1)
-GPIO.output(26, GPIO.LOW)
-time.sleep(1)
+print 'Adafruit MPR121 Capacitive Touch Audio Player Test'
 
 # Create MPR121 instance.
 cap = MPR121.MPR121()
@@ -58,6 +45,33 @@ if not cap.begin():
 # Also you can specify an optional I2C bus with the bus keyword parameter.
 #cap.begin(busnum=1)
 
+pygame.mixer.pre_init(44100, -16, 12, 512)
+pygame.init()
+
+# Define mapping of capacitive touch pin presses to sound files
+# tons more sounds are available in /opt/sonic-pi/etc/samples/ and
+# /usr/share/scratch/Media/Sounds/
+SOUND_MAPPING = {
+  0: '/opt/sonic-pi/etc/samples/drum_bass_soft.wav',
+  1: '/opt/sonic-pi/etc/samples/drum_bass_hard.wav',
+  2: '/opt/sonic-pi/etc/samples/drum_snare_soft.wav',
+  3: '/opt/sonic-pi/etc/samples/drum_snare_hard.wav',
+  4: '/opt/sonic-pi/etc/samples/drum_tom_lo_soft.wav',
+  5: '/opt/sonic-pi/etc/samples/drum_tom_mid_hard.wav',
+  6: '/opt/sonic-pi/etc/samples/drum_tom_hi_hard.wav',
+  7: '/opt/sonic-pi/etc/samples/drum_heavy_kick.wav',
+  8: '/opt/sonic-pi/etc/samples/drum_cymbal_open.wav',
+  9: '/opt/sonic-pi/etc/samples/drum_cymbal_hard.wav',
+  10: '/opt/sonic-pi/etc/samples/drum_cymbal_soft.wav',
+  11: '/opt/sonic-pi/etc/samples/perc_bell.wav',
+}
+
+sounds = [0,0,0,0,0,0,0,0,0,0,0,0]
+
+for key,soundfile in SOUND_MAPPING.iteritems():
+        sounds[key] =  pygame.mixer.Sound(soundfile)
+        sounds[key].set_volume(1);
+
 # Main loop to print a message every time a pin is touched.
 print('Press Ctrl-C to quit.')
 last_touched = cap.touched()
@@ -71,9 +85,11 @@ while True:
         # First check if transitioned from not touched to touched.
         if current_touched & pin_bit and not last_touched & pin_bit:
             print('{0} touched!'.format(i))
-        # Next check if transitioned from touched to not touched.
+            if (sounds[i]):
+                sounds[i].play()
         if not current_touched & pin_bit and last_touched & pin_bit:
             print('{0} released!'.format(i))
+
     # Update last state and wait a short period before repeating.
     last_touched = current_touched
     time.sleep(0.1)
@@ -81,29 +97,12 @@ while True:
     # Alternatively, if you only care about checking one or a few pins you can
     # call the is_touched method with a pin number to directly check that pin.
     # This will be a little slower than the above code for checking a lot of pins.
-    if cap.is_touched(0):
-        print('Pin 0 is being touched!')
-	GPIO.output(16, GPIO.HIGH)
-	time.sleep(1)
-	GPIO.output(16, GPIO.LOW)
-
-    if cap.is_touched(11):
-        print('Pin 11 is being touched!')
-        GPIO.output(26, GPIO.HIGH)
-	time.sleep(1)
-        GPIO.output(26, GPIO.LOW)
-
-#    if cap.is_touched(1):
-#        print('Pin 1 is being touched!')
-#        GPIO.output(16, GPIO.LOW)
-
-#    if cap.is_touched(4):
-#        print('Pin 4 is being touched!')
-#        GPIO.output(26, GPIO.LOW)
+    #if cap.is_touched(0):
+    #    print('Pin 0 is being touched!')
 
     # If you're curious or want to see debug info for each pin, uncomment the
     # following lines:
-    #print '\t\t\t\t\t\t\t\t\t\t\t\t\t 0x{0:0X}'.format(cap.touched())
+    #print('\t\t\t\t\t\t\t\t\t\t\t\t\t 0x{0:0X}'.format(cap.touched()))
     #filtered = [cap.filtered_data(i) for i in range(12)]
     #print('Filt:', '\t'.join(map(str, filtered)))
     #base = [cap.baseline_data(i) for i in range(12)]
