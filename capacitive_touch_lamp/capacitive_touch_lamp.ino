@@ -5,7 +5,7 @@
 
 #define PIN 6
 #define NUM_LEDS 16
-#define BRIGHTNESS 100
+#define BRIGHTNESS 10
 #define ledPin 13
 
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(NUM_LEDS, PIN, NEO_GRB + NEO_KHZ800);
@@ -27,20 +27,26 @@ void loop() {
      switch(var)
      {
         case 1:
-          yoda();
+          rebel();
           break;
         case 2:
-          luke();
+          lightSide();
           break;
         case 3:
-          vader();
+          empire();
           break;
         case 4:
-          vaderBreathing();
+          darkSide();
+          break;
+        case 5:
+          logo();
           break; 
      }
   }
-  delay(500);
+  else {
+    blueRing();
+  }
+  delay(100);
 
   //colorWipe(strip.Color(255, 0, 0), 50); // Red
   //colorWipe(strip.Color(0, 255, 0), 50); // Green
@@ -52,7 +58,14 @@ void loop() {
   //rainbowCycle(20);
 }
 
-void yoda() {
+void blueRing() {
+  for(uint16_t i=0; i<strip.numPixels(); i++) {
+    strip.setPixelColor(i, strip.Color(0, 0, 255));
+  }
+  strip.show();
+}
+
+void rebel() {
   //blink(1);
   colorPulse(0, 255, 0, 100, 100);
   clearRing();
@@ -60,7 +73,7 @@ void yoda() {
   delay(100);
 }
 
-void luke() {
+void lightSide() {
   //blink(2);
   colorPulse(0, 255, 0, 100, 100);
   clearRing();
@@ -68,7 +81,7 @@ void luke() {
   delay(100); 
 }
 
-void vader() {
+void empire() {
   //blink(3);
   colorPulse(255, 0, 0, 100, 100);
   clearRing();
@@ -76,12 +89,20 @@ void vader() {
   delay(100);
 }
 
-void vaderBreathing() {
+void darkSide() {
   //blink(4);
   colorPulse(255, 0, 0, 100, 100);
   clearRing();
   strip.show();
   delay(100);
+}
+
+void logo() {
+  //blink(5);
+  colorPulse(255, 255, 5, 100, 1100);
+  clearRing();
+  strip.show();
+  delay(100);  
 }
 
 // Fill the dots one after the other with a color
@@ -133,7 +154,7 @@ uint32_t Wheel(byte WheelPos) {
   return strip.Color(WheelPos * 3, 255 - WheelPos * 3, 0);
 }
 
-void colorPulse(int r, int g, int b, uint8_t wait, uint8_t waitExtra) {
+void colorPulse(int r, int g, int b, uint16_t wait, uint16_t waitExtra) {
   clearRing();
   strip.show();
   delay(wait);
