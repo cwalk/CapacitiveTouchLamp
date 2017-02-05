@@ -37,6 +37,11 @@ def vaderBreathing():
 	os.system('aplay vader.wav')
 	flag1 = 0
 
+def logo():
+	global flag1
+	os.system('aplay mainthemeshort.wav')
+	flag1 = 0
+
 def greenLight():
 	global flag2
 	ser.write('1')
@@ -45,6 +50,11 @@ def greenLight():
 def redLight():
 	global flag2
 	ser.write('3')
+	flag2 = 0
+
+def logoLight():
+	global flag2
+	ser.write('5')
 	flag2 = 0
 
 #def redLight():
@@ -106,6 +116,14 @@ while True:
 #	ser.write('2')
         Thread(target = luke).start()
         Thread(target = greenLight).start()
+
+    if cap.is_touched(6) and flag1 == 0 and flag2 == 0:
+	print('Pin 6 is being touched!')
+	flag1 = 1
+	flag2 = 1
+#	ser.write('5')
+	Thread(target = logo).start()
+	Thread(target = logoLight).start()
 
     if cap.is_touched(10) and flag1 == 0 and flag2 == 0:
 	print('Pin 10 is being touched!')
