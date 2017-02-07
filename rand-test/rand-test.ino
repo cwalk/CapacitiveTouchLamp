@@ -135,14 +135,14 @@ void loop() {
 
 void steady() {
   for(uint16_t i=0; i<strip.numPixels(); i++) {
-    strip.setPixelColor(i, strip.Color(0, 0, 255));
+    strip.setPixelColor(i, strip.Color(255, 5, 180));
   }
   strip.show();
 }
 
 void bidding() {
   //1
-  colorPulse(0, 255, 0, 100, 100);
+  colorPulse(255, 0, 0, 100, 120);
   clearRing();
   strip.show();
   delay(100);
@@ -150,7 +150,7 @@ void bidding() {
 
 void breath() {
   //2
-  colorPulse(0, 255, 0, 100, 100);
+  colorPulse(255, 0, 0, 100, 250);
   clearRing();
   strip.show();
   delay(100); 
@@ -158,7 +158,7 @@ void breath() {
 
 void darkside() {
   //3
-  colorPulse(255, 0, 0, 100, 100);
+  colorPulse(255, 0, 0, 100, 220);
   clearRing();
   strip.show();
   delay(100);
@@ -166,7 +166,7 @@ void darkside() {
 
 void DarthLsbr() {
   //4
-  colorPulse(255, 0, 0, 100, 100);
+  colorPulse(255, 0, 0, 100, 220);
   clearRing();
   strip.show();
   delay(100);
@@ -182,7 +182,7 @@ void dontfail() {
 
 void failed() {
   //6
-  colorPulse(255, 0, 0, 100, 100);
+  colorPulse(255, 0, 0, 100, 220);
   clearRing();
   strip.show();
   delay(100);
@@ -198,7 +198,7 @@ void father() {
 
 void haveyou() {
   //8
-  colorPulse(255, 0, 0, 100, 100);
+  colorPulse(255, 0, 0, 100, 65);
   clearRing();
   strip.show();
   delay(100);
@@ -206,7 +206,7 @@ void haveyou() {
 
 void noescape() {
   //9
-  colorPulse(255, 0, 0, 100, 100);
+  colorPulse(255, 0, 0, 100, 300);
   clearRing();
   strip.show();
   delay(100);
@@ -214,7 +214,7 @@ void noescape() {
 
 void power() {
   //10
-  colorPulse(255, 0, 0, 100, 100);
+  colorPulse(255, 0, 0, 100, 220);
   clearRing();
   strip.show();
   delay(100);
@@ -222,7 +222,7 @@ void power() {
 
 void theforce() {
   //11
-  colorPulse(255, 0, 0, 100, 100);
+  colorPulse(255, 0, 0, 100, 550);
   clearRing();
   strip.show();
   delay(100);
@@ -238,7 +238,7 @@ void vader() {
 
 void waiting() {
   //13
-  colorPulse(255, 0, 0, 100, 100);
+  colorPulse(255, 0, 0, 100, 120);
   clearRing();
   strip.show();
   delay(100);
@@ -246,7 +246,7 @@ void waiting() {
 
 void imperial() {
   //14
-  colorPulse(255, 0, 0, 100, 100);
+  colorPulse(255, 0, 0, 100, 2420);
   clearRing();
   strip.show();
   delay(100);
@@ -254,7 +254,7 @@ void imperial() {
 
 void impossible() {
   //15
-  colorPulse(255, 0, 0, 100, 100);
+  colorPulse(0, 255, 0, 100, 550);
   clearRing();
   strip.show();
   delay(100);
@@ -262,7 +262,7 @@ void impossible() {
 
 void LukeLsbr() {
   //16
-  colorPulse(255, 0, 0, 100, 100);
+  colorPulse(0, 255, 0, 100, 160);
   clearRing();
   strip.show();
   delay(100);
@@ -270,7 +270,7 @@ void LukeLsbr() {
 
 void yoda() {
   //17
-  colorPulse(255, 0, 0, 100, 100);
+  colorPulse(0, 255, 0, 100, 85);
   clearRing();
   strip.show();
   delay(100);
@@ -278,7 +278,7 @@ void yoda() {
 
 void disturb() {
   //18
-  colorPulse(255, 0, 0, 100, 100);
+  colorPulse(0, 0, 255, 100, 100);
   clearRing();
   strip.show();
   delay(100);
@@ -286,7 +286,7 @@ void disturb() {
 
 void force1() {
   //19
-  colorPulse(255, 0, 0, 100, 100);
+  colorPulse(0, 0, 255, 100, 100);
   clearRing();
   strip.show();
   delay(100);
@@ -294,7 +294,7 @@ void force1() {
 
 void force2() {
   //20
-  colorPulse(255, 0, 0, 100, 100);
+  colorPulse(0, 0, 255, 100, 65);
   clearRing();
   strip.show();
   delay(100);
@@ -302,7 +302,7 @@ void force2() {
 
 void strongam() {
   //21
-  colorPulse(255, 0, 0, 100, 100);
+  colorPulse(0, 255, 0, 100, 100);
   clearRing();
   strip.show();
   delay(100);
@@ -310,7 +310,7 @@ void strongam() {
 
 void try_not() {
   //22
-  colorPulse(255, 0, 0, 100, 100);
+  colorPulse(0, 255, 0, 100, 420);
   clearRing();
   strip.show();
   delay(100);
@@ -326,7 +326,7 @@ void mainthemeshort() {
 
 void c3po() {
   //24
-  colorPulse(255, 0, 0, 100, 100);
+  colorPulse(255, 255, 5, 100, 200);
   clearRing();
   strip.show();
   delay(100);
@@ -334,7 +334,7 @@ void c3po() {
 
 void helpme() {
   //25
-  colorPulse(255, 0, 0, 100, 100);
+  colorPulse(255, 255, 255, 100, 180);
   clearRing();
   strip.show();
   delay(100);
@@ -342,7 +342,7 @@ void helpme() {
 
 void r2d2_1() {
   //26
-  colorPulse(255, 0, 0, 100, 100);
+  colorPulse(0, 0, 255, 100, 85);
   clearRing();
   strip.show();
   delay(100);
@@ -350,7 +350,7 @@ void r2d2_1() {
 
 void r2d2_2() {
   //27
-  colorPulse(255, 0, 0, 100, 100);
+  colorPulse(0, 0, 255, 100, 100);
   clearRing();
   strip.show();
   delay(100);
@@ -358,7 +358,7 @@ void r2d2_2() {
 
 void roar() {
   //28
-  colorPulse(255, 0, 0, 100, 100);
+  colorPulse(0, 255, 0, 100, 100);
   clearRing();
   strip.show();
   delay(100);
@@ -366,7 +366,7 @@ void roar() {
 
 void stuck_up() {
   //29
-  colorPulse(255, 0, 0, 100, 100);
+  colorPulse(255, 255, 255, 100, 300);
   clearRing();
   strip.show();
   delay(100);
@@ -374,7 +374,7 @@ void stuck_up() {
 
 void thankme() {
   //30
-  colorPulse(255, 0, 0, 100, 100);
+  colorPulse(0, 255, 0, 100, 85);
   clearRing();
   strip.show();
   delay(100);
