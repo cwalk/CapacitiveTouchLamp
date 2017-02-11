@@ -5,7 +5,7 @@
 
 #define PIN 6
 #define NUM_LEDS 16
-#define BRIGHTNESS 10
+#define BRIGHTNESS 100
 #define ledPin 13
 
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(NUM_LEDS, PIN, NEO_GRB + NEO_KHZ800);
@@ -22,29 +22,104 @@ void loop() {
 
   if (Serial.available())  
   {
-     int var = (Serial.read() - '0');  // convert the character '1'-'9' to decimal 1-9
+     int var = (Serial.read() - '`');  // convert the character '1'-'9' to decimal 1-9
 
      switch(var)
      {
         case 1:
-          rebel();
+          bidding();
           break;
         case 2:
-          lightSide();
+          breath();
           break;
         case 3:
-          empire();
+          darkside();
           break;
         case 4:
-          darkSide();
+          DarthLsbr();
           break;
         case 5:
-          logo();
+          dontfail();
+          break;
+        case 6:
+          failed();
+          break;
+        case 7:
+          father();
+          break;
+        case 8:
+          haveyou();
+          break;
+        case 9:
+          noescape();
+          break;
+        case 10:
+          power();
+          break;
+        case 11:
+          theforce();
+          break;
+        case 12:
+          vader();
+          break;
+        case 13:
+          waiting();
+          break;
+        case 14:
+          imperial();
+          break;
+        case 15:
+          impossible();
+          break;
+        case 16:
+          LukeLsbr();
+          break;
+        case 17:
+          yoda();
+          break;
+        case 18:
+          disturb();
+          break;
+        case 19:
+          force1();
+          break;
+        case 20:
+          force2();
+          break;
+        case 21:
+          strongam();
+          break;
+        case 22:
+          try_not();
+          break;
+        case 23:
+          mainthemeshort();
+          break;
+        case 24:
+          c3po();
+          break;
+        case 25:
+          helpme();
+          break;
+        case 26:
+          r2d2_1();
+          break;
+        case 27:
+          r2d2_2();
+          break;
+        case 28:
+          roar();
+          break;
+        case 29:
+          stuck_up();
+          break;
+        case 30:
+          thankme();
           break; 
      }
   }
   else {
-    blueRing();
+    steady();
   }
   delay(100);
 
@@ -58,51 +133,251 @@ void loop() {
   //rainbowCycle(20);
 }
 
-void blueRing() {
+void steady() {
   for(uint16_t i=0; i<strip.numPixels(); i++) {
-    strip.setPixelColor(i, strip.Color(0, 0, 255));
+    strip.setPixelColor(i, strip.Color(255, 255, 255));
   }
   strip.show();
 }
 
-void rebel() {
-  //blink(1);
-  colorPulse(0, 255, 0, 100, 100);
+void bidding() {
+  //1
+  colorPulse(255, 0, 0, 100, 120);
   clearRing();
   strip.show();
   delay(100);
 }
 
-void lightSide() {
-  //blink(2);
-  colorPulse(0, 255, 0, 100, 100);
+void breath() {
+  //2
+  colorPulse(255, 0, 0, 100, 250);
   clearRing();
   strip.show();
   delay(100); 
 }
 
-void empire() {
-  //blink(3);
+void darkside() {
+  //3
+  colorPulse(255, 0, 0, 100, 220);
+  clearRing();
+  strip.show();
+  delay(100);
+}
+
+void DarthLsbr() {
+  //4
+  colorPulse(255, 0, 0, 100, 220);
+  clearRing();
+  strip.show();
+  delay(100);
+}
+
+void dontfail() {
+  //5
   colorPulse(255, 0, 0, 100, 100);
   clearRing();
   strip.show();
   delay(100);
 }
 
-void darkSide() {
-  //blink(4);
+void failed() {
+  //6
+  colorPulse(255, 0, 0, 100, 220);
+  clearRing();
+  strip.show();
+  delay(100);
+}
+
+void father() {
+  //7
   colorPulse(255, 0, 0, 100, 100);
   clearRing();
   strip.show();
   delay(100);
 }
 
-void logo() {
-  //blink(5);
+void haveyou() {
+  //8
+  colorPulse(255, 0, 0, 100, 65);
+  clearRing();
+  strip.show();
+  delay(100);
+}
+
+void noescape() {
+  //9
+  colorPulse(255, 0, 0, 100, 300);
+  clearRing();
+  strip.show();
+  delay(100);
+}
+
+void power() {
+  //10
+  colorPulse(255, 0, 0, 100, 220);
+  clearRing();
+  strip.show();
+  delay(100);
+}
+
+void theforce() {
+  //11
+  colorPulse(255, 0, 0, 100, 550);
+  clearRing();
+  strip.show();
+  delay(100);
+}
+
+void vader() {
+  //12
+  colorPulse(255, 0, 0, 100, 100);
+  clearRing();
+  strip.show();
+  delay(100);
+}
+
+void waiting() {
+  //13
+  colorPulse(255, 0, 0, 100, 120);
+  clearRing();
+  strip.show();
+  delay(100);
+}
+
+void imperial() {
+  //14
+  colorPulse(255, 0, 0, 100, 2420);
+  clearRing();
+  strip.show();
+  delay(100);
+}
+
+void impossible() {
+  //15
+  colorPulse(0, 255, 0, 100, 550);
+  clearRing();
+  strip.show();
+  delay(100);
+}
+
+void LukeLsbr() {
+  //16
+  colorPulse(0, 255, 0, 100, 160);
+  clearRing();
+  strip.show();
+  delay(100);
+}
+
+void yoda() {
+  //17
+  colorPulse(0, 255, 0, 100, 85);
+  clearRing();
+  strip.show();
+  delay(100);
+}
+
+void disturb() {
+  //18
+  colorPulse(0, 0, 255, 100, 100);
+  clearRing();
+  strip.show();
+  delay(100);
+}
+
+void force1() {
+  //19
+  colorPulse(0, 0, 255, 100, 100);
+  clearRing();
+  strip.show();
+  delay(100);
+}
+
+void force2() {
+  //20
+  colorPulse(0, 0, 255, 100, 65);
+  clearRing();
+  strip.show();
+  delay(100);
+}
+
+void strongam() {
+  //21
+  colorPulse(0, 255, 0, 100, 100);
+  clearRing();
+  strip.show();
+  delay(100);
+}
+
+void try_not() {
+  //22
+  colorPulse(0, 255, 0, 100, 420);
+  clearRing();
+  strip.show();
+  delay(100);
+}
+
+void mainthemeshort() {
+  //23
   colorPulse(255, 255, 5, 100, 1100);
   clearRing();
   strip.show();
   delay(100);  
+}
+
+void c3po() {
+  //24
+  colorPulse(255, 255, 5, 100, 200);
+  clearRing();
+  strip.show();
+  delay(100);
+}
+
+void helpme() {
+  //25
+  colorPulse(255, 255, 255, 100, 180);
+  clearRing();
+  strip.show();
+  delay(100);
+}
+
+void r2d2_1() {
+  //26
+  colorPulse(0, 0, 255, 100, 85);
+  clearRing();
+  strip.show();
+  delay(100);
+}
+
+void r2d2_2() {
+  //27
+  colorPulse(0, 0, 255, 100, 100);
+  clearRing();
+  strip.show();
+  delay(100);
+}
+
+void roar() {
+  //28
+  colorPulse(0, 255, 0, 100, 100);
+  clearRing();
+  strip.show();
+  delay(100);
+}
+
+void stuck_up() {
+  //29
+  colorPulse(255, 255, 255, 100, 300);
+  clearRing();
+  strip.show();
+  delay(100);
+}
+
+void thankme() {
+  //30
+  colorPulse(0, 255, 0, 100, 85);
+  clearRing();
+  strip.show();
+  delay(100);
 }
 
 // Fill the dots one after the other with a color
