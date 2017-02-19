@@ -11,18 +11,19 @@ I am using a Raspberry Pi 2, but you should be able to use almost any version of
 
 Commands I would use to set up the environment:
 
-    `sudo apt-get update`
-    `sudo apt-get install build-essential python-dev python-smbus python-pip git`
+    sudo apt-get update
+    sudo apt-get install build-essential python-dev python-smbus python-pip git
 
-    `cd ~/Desktop`
-    `git clone https://github.com/cwalk/CapacitiveTouchLamp.git`
+    cd ~/Desktop
+    git clone https://github.com/cwalk/CapacitiveTouchLamp.git
 
-    `cd CapacitiveTouchLamp/`
-    `sudo python setup.py install`
+    cd CapacitiveTouchLamp/
+    sudo python setup.py install
 
 To run the code:
-   `cd examples/`
-   `sudo python cap.py`
+
+    cd examples/
+    sudo python cap.py
 
 ## Cron job
 
