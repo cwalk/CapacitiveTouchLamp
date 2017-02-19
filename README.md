@@ -48,6 +48,8 @@ Basically the `cap.py` file is always running, thanks to the cron job. This list
 
 Meanwhile, the Arduino, which is connected to the Pi through Serial, recieves that and will play a lighting animation that correlates to the audio file, with precise timing to the length of the audio file.
 
+My code uses pins 0, 4, 6, 10, and 11 for sensing touch from the MPR121 capacitive touch sensor.
+
 ## Circuit Diagram
 
 Here is the circuit diagram I made.
