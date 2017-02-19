@@ -9,7 +9,7 @@ YouTube:
 
 I am using a Raspberry Pi 2, but you should be able to use almost any version of the Raspberry Pi without issue. I have the project folder on my Pi's Desktop, but you can clone it where you like. Most of the code is in the `examples/` folder. You might need to install the capacitive touch library I'm using: https://github.com/adafruit/Adafruit_Python_MPR121
 
-Commands I would use to set up the environment:
+Commands I would use to set up the Pi environment:
 
     sudo apt-get update
     sudo apt-get install build-essential python-dev python-smbus python-pip git
@@ -24,6 +24,8 @@ To run the code:
 
     cd examples/
     sudo python cap.py
+    
+For the Arduino, just upload the sketch found at CapacitiveTouchLamp/capacitive_touch_lamp/capacitive_touch_lamp.ino 
 
 ## Cron job
 
