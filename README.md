@@ -42,6 +42,7 @@ Meanwhile, the Arduino, which is connected to the Pi through Serial, recieves th
 Here is the circuit diagram I made.
 
 Pi -> MPR121 Capacitive Touch sensor:
+
     3.3V -> VIN
     GND -> GND
     SDA -> SDA
@@ -50,6 +51,7 @@ Pi -> MPR121 Capacitive Touch sensor:
 Hardware: ![Circuit Diagram](/diagram.png?raw=true "Circuit Diagram")
 
 Arduino -> NeoPixel:
+    
     5V -> 5V
     GND -> GND
     Pin 6 -> Data In
