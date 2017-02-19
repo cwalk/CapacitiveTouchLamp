@@ -27,7 +27,18 @@ To run the code:
 
 ## Cron job
 
-What I did was setup a cron job to run my `launcher.sh` script everytime my Pi reboots. This makes it easy because all I have to do is add power to the Pi, and the project starts working after the Pi boots. Now I made `launcher.sh` run on reboot, but all this shell script does is navigate to my project directory, and run `sudo python cap.py`. Please feel free to just set up a cron job to run `sudo python cap.py` instead.
+What I did was setup a cron job to run my `launcher.sh` script everytime my Pi reboots (I move this script to the Pi Desktop). This makes it easy because all I have to do is add power to the Pi, and the project starts working after the Pi boots. Now I made `launcher.sh` run on reboot, but all this shell script does is navigate to my project directory, and run `sudo python cap.py`. Please feel free to just set up a cron job to run `sudo python cap.py` instead.
+
+`sudo crontab -e`
+
+And add `@reboot sh /home/pi/Desktop/launcher.sh` at the bottom.
+
+Launcher.sh should look something like this:
+
+    cd /home/pi/Desktop/CapacitiveTouchLamp/examples
+    sudo python cap.py
+
+Make sure you give `launcher.sh` permissions to run.
 
 For more help, check out: https://www.raspberrypi.org/documentation/linux/usage/cron.md and http://www.instructables.com/id/Raspberry-Pi-Launch-Python-script-on-startup/
 
