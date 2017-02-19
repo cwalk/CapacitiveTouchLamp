@@ -45,8 +45,8 @@ Pi -> MPR121 Capacitive Touch sensor:
 
     3.3V -> VIN
     GND -> GND
-    SDA -> SDA
     SCL -> SCL
+    SDA -> SDA
 
 Hardware: ![Circuit Diagram](/diagram.png?raw=true "Circuit Diagram")
 
