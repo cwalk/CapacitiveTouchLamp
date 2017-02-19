@@ -21,8 +21,8 @@ Commands I would use to set up the environment:
     `sudo python setup.py install`
 
 To run the code:
-    `cd examples`
-    `sudo python cap.py`
+   `cd examples/`
+   `sudo python cap.py`
 
 ## Cron job
 
