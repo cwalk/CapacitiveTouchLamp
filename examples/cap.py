@@ -345,8 +345,8 @@ while True:
     randomInt = 0
 
 	#darkSide
-    if cap.is_touched(0) and flag1 == 0 and flag2 == 0:
-    	print('Pin 0 is being touched!')
+    if cap.is_touched(8) and flag1 == 0 and flag2 == 0:
+    	print('Pin 8 is being touched!')
 	flag1 = 1
 	flag2 = 1
 	#ser.write('1-13')
@@ -395,8 +395,8 @@ while True:
 		Thread(target = waitingLight).start()
 
 	#empire
-    if cap.is_touched(4) and flag1 == 0 and flag2 == 0:
-	print('Pin 4 is being touched!')
+    if cap.is_touched(5) and flag1 == 0 and flag2 == 0:
+	print('Pin 5 is being touched!')
 	flag1 = 1
         flag2 = 1
 	#ser.write('14')
@@ -404,8 +404,8 @@ while True:
     	Thread(target = imperialLight).start()
 
 	#lightSide	
-    if cap.is_touched(6) and flag1 == 0 and flag2 == 0:
-	print('Pin 6 is being touched!')
+    if cap.is_touched(11) and flag1 == 0 and flag2 == 0:
+	print('Pin 11 is being touched!')
 	flag1 = 1
 	flag2 = 1
 	#ser.write('15-22')
@@ -439,8 +439,8 @@ while True:
 		Thread(target = try_notLight).start()
 
 	#logo
-    if cap.is_touched(10) and flag1 == 0 and flag2 == 0:
-	print('Pin 10 is being touched!')
+    if cap.is_touched(0) and flag1 == 0 and flag2 == 0:
+	print('Pin 0 is being touched!')
 	flag1 = 1
 	flag2 = 1
 	#ser.write('23')
@@ -448,8 +448,8 @@ while True:
 	Thread(target = mainthemeshortLight).start()
 
 	#rebel
-    if cap.is_touched(11) and flag1 == 0 and flag2 == 0:
-	print('Pin 11 is being touched!')	
+    if cap.is_touched(4) and flag1 == 0 and flag2 == 0:
+	print('Pin 4 is being touched!')	
 	flag1 = 1
 	flag2 = 1
 	#ser.write('24-30')
