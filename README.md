@@ -3,7 +3,7 @@ Making an interactive lamp through the use of capacitive touch, Raspberry Pi, py
 
 ## YouTube
 
-YouTube: 
+YouTube: https://www.youtube.com/playlist?list=PLgAD2y-6wgwoK8elS6MGACtj486-vvLzR
 
 ## Set Up
 
